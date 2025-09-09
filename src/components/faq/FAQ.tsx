@@ -23,13 +23,13 @@ export default function FAQ() {
           <div className="lg:w-1/3">
             <div className="sticky top-40">
               <h2 className="text-3xl font-bold">Часто задаваемые вопросы</h2>
-              <p className="mt-4 font-medium sm:text-lg text-white/85">
+              <p className="mt-4 font-medium sm:text-lg text-white/90">
                 Не нашли ответ на свой вопрос?
               </p>
 
               <Link
                 href="/contacts"
-                className="inline-flex items-center font-bold group sm:text-lg"
+                className="inline-flex gap-0.5 items-center font-bold group sm:text-lg text-white/85 transition-colors duration-200 hover:text-white"
               >
                 Свяжитесь с нами
                 <ChevronRight
