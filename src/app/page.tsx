@@ -12,6 +12,7 @@ export default function Home() {
       <div className="h-screen w-screen flex justify-center"></div>
 
       <div className="w-screen h-screen bg-white rounded-4xl"></div>
+
       <FAQ />
     </>
   );

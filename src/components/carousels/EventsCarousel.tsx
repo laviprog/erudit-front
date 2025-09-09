@@ -6,7 +6,7 @@ import EventCard from '@/components/cards/EventCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Event } from '@/types/Event';
 import type { Swiper as SwiperClass } from 'swiper';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -19,19 +19,8 @@ export default function EventsCarousel({ events }: { events: Event[] }) {
   const [swiper, setSwiper] = useState<SwiperClass | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const showSwiper = windowWidth >= 1100 ? events.length > 2 : events.length > 1;
 
   const handleEventClick = (event: Event) => {
     setSelectedEvent(event);
@@ -75,80 +64,64 @@ export default function EventsCarousel({ events }: { events: Event[] }) {
 
   return (
     <>
-      {showSwiper ? (
-        <div className="flex flex-col gap-4 w-full relative">
-          <Swiper
-            modules={[Navigation]}
-            onSwiper={(s) => {
-              setSwiper(s);
-              setIsBeginning(s.isBeginning);
-              setIsEnd(s.isEnd);
-            }}
-            onSlideChange={(s) => {
-              setIsBeginning(s.isBeginning);
-              setIsEnd(s.isEnd);
-            }}
-            speed={1500}
-            slidesPerView={3}
-            spaceBetween={10}
-            breakpoints={{
-              0: { slidesPerView: 1 },
-              1100: { slidesPerView: 2 },
-            }}
-            className="w-full"
-          >
-            {events.map((event, i) => (
-              <SwiperSlide key={i}>
-                <EventCard event={event} onClick={() => handleEventClick(event)} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {swiper && (
-            <div className="flex justify-center items-center gap-3">
-              <button
-                className={`p-3 rounded-full ${
-                  isBeginning ? 'bg-white/40 cursor-not-allowed' : 'bg-neutral-200 cursor-pointer'
-                }`}
-                disabled={isBeginning}
-                onClick={() => swiper.slidePrev()}
-              >
-                <ChevronLeft
-                  className="sm:w-10 sm:h-10 w-8 h-8 text-[var(--violet-light)]"
-                  strokeWidth={3}
-                />
-              </button>
-              <button
-                className={`p-3 rounded-full ${
-                  isEnd ? 'bg-white/40 cursor-not-allowed' : 'bg-neutral-200 cursor-pointer'
-                }`}
-                disabled={isEnd}
-                onClick={() => swiper.slideNext()}
-              >
-                <ChevronRight
-                  className="sm:w-10 sm:h-10 w-8 h-8 text-[var(--violet-light)]"
-                  strokeWidth={3}
-                />
-              </button>
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div className="flex flex-col gap-4 w-full relative">
+        <Swiper
+          modules={[Navigation]}
+          onSwiper={(s) => {
+            setSwiper(s);
+            setIsBeginning(s.isBeginning);
+            setIsEnd(s.isEnd);
+          }}
+          onSlideChange={(s) => {
+            setIsBeginning(s.isBeginning);
+            setIsEnd(s.isEnd);
+          }}
+          speed={1500}
+          slidesPerView={3}
+          spaceBetween={10}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            1100: { slidesPerView: 2 },
+          }}
+          centerInsufficientSlides={true}
+          className="w-full"
+        >
           {events.map((event, i) => (
-            <div
-              key={i}
-              className={
-                events.length % 2 !== 0 && i === events.length - 1
-                  ? 'lg:col-span-2 lg:max-w-[calc((80vw-20px)/2)] lg:mx-auto'
-                  : ''
-              }
-            >
+            <SwiperSlide key={i}>
               <EventCard event={event} onClick={() => handleEventClick(event)} />
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
-      )}
+        </Swiper>
+
+        {swiper && (!isEnd || !isBeginning) && (
+          <div className="flex justify-center items-center gap-3">
+            <button
+              className={`p-3 rounded-full ${
+                isBeginning ? 'bg-white/40 cursor-not-allowed' : 'bg-neutral-200 cursor-pointer'
+              }`}
+              disabled={isBeginning}
+              onClick={() => swiper.slidePrev()}
+            >
+              <ChevronLeft
+                className="sm:w-10 sm:h-10 w-8 h-8 text-[var(--violet-light)]"
+                strokeWidth={3}
+              />
+            </button>
+            <button
+              className={`p-3 rounded-full ${
+                isEnd ? 'bg-white/40 cursor-not-allowed' : 'bg-neutral-200 cursor-pointer'
+              }`}
+              disabled={isEnd}
+              onClick={() => swiper.slideNext()}
+            >
+              <ChevronRight
+                className="sm:w-10 sm:h-10 w-8 h-8 text-[var(--violet-light)]"
+                strokeWidth={3}
+              />
+            </button>
+          </div>
+        )}
+      </div>
 
       <Modal
         isOpen={isModalOpen}

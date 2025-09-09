@@ -31,21 +31,18 @@ export default function AccordionItem({ item, isOpen, onToggle }: AccordionItemP
       >
         <div className="flex items-center sm:gap-3 gap-2">
           <div>
-          <DynamicIcon name={item.icon} className="md:size-6 size-5 stroke-[2.5]" />
+            <DynamicIcon name={item.icon} className="md:size-6 size-5 stroke-[2.5]" />
           </div>
           <span className="sm:text-lg text-base font-medium text-start">{item.question}</span>
         </div>
         <div>
-        <ChevronDown
-          className={`md:size-5 size-4 transition-transform duration-300 stroke-[2.5] ${isOpen ? 'rotate-180' : ''}`}
-        />
+          <ChevronDown
+            className={`md:size-5 size-4 transition-transform duration-300 stroke-[2.5] ${isOpen ? 'rotate-180' : ''}`}
+          />
         </div>
       </button>
 
-      <div
-        style={{ height }}
-        className="overflow-hidden transition-all duration-500 ease-in-out"
-      >
+      <div style={{ height }} className="overflow-hidden transition-all duration-500 ease-in-out">
         <div ref={contentRef} className="pb-5">
           <p className="max-sm:text-base">{item.answer}</p>
         </div>
