@@ -1,4 +1,3 @@
-
 export function getApiBaseUrl(): string {
   const apiBaseUrl = process.env.API_BASE_URL;
   if (!apiBaseUrl) {

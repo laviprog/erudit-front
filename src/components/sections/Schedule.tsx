@@ -3,7 +3,6 @@ import Animated from '@/components/animations/Animated';
 import EventsCarousel from '@/components/carousels/EventsCarousel';
 import getEvents from '@/lib/api/events';
 
-
 export default async function Schedule() {
   let events: Event[] = [];
   try {

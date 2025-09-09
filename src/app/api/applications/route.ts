@@ -15,7 +15,7 @@ interface ApplicationRequest {
   email: string;
   phone: string;
   teamName: string;
-  teamParticipantsNumber: number
+  teamParticipantsNumber: number;
   eventId: number;
 }
 
@@ -32,7 +32,7 @@ function transformApplication(data: ApplicationRequest): ApplicationPayload {
 
 export async function POST(request: Request) {
   try {
-    const apiBaseUrl = getApiBaseUrl()
+    const apiBaseUrl = getApiBaseUrl();
     const req_data: ApplicationRequest = await request.json();
 
     const transformedData = transformApplication(req_data);
@@ -43,11 +43,12 @@ export async function POST(request: Request) {
       body: JSON.stringify(transformedData),
     });
     if (!res.ok) {
-      return NextResponse.json({ error: "Failed to fetch applications" }, { status: res.status });
+      return NextResponse.json({ error: 'Failed to fetch applications' }, { status: res.status });
     }
     const data = await res.json();
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    console.error(error);
+    return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }

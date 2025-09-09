@@ -111,7 +111,7 @@ export default function EventCard({ event, className, onClick }: Props) {
             <p className="text-[var(--dark)]">📅 {eventDate}</p>
             <p className="text-[var(--dark)]">📍 {event.location}</p>
           </div>
-          <div className="flex gap-2 flex-wrap lg:mt-2">
+          <div className="flex gap-2 flex-wrap lg:mt-1">
             {formatLabel() && <span className="badge max-lg:hidden">{formatLabel()}</span>}
             <span className="badge">⏱ {event.duration} мин</span>
             <span className="badge">💸 {event.price} ₽</span>

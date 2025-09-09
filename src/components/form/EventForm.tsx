@@ -52,12 +52,36 @@ export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFo
   return (
     <form onSubmit={handleSubmit} className="sm:space-y-4 space-y-3 my-2">
       {[
-        { id: 'name', label: 'Имя*', type: 'text', value: formData.name, placeholder: 'Иван Иванов' },
-        { id: 'email', label: 'Email*', type: 'email', value: formData.email, placeholder: 'example@mail.ru' },
-        { id: 'phone', label: 'Телефон*', type: 'tel', value:  formData.phone, placeholder: '89874569034' },
-        { id: 'teamName', label: 'Название команды*', type: 'text', value: formData.teamName, placeholder: 'Умные утята' },
+        {
+          id: 'name',
+          label: 'Имя*',
+          type: 'text',
+          value: formData.name,
+          placeholder: 'Иван Иванов',
+        },
+        {
+          id: 'email',
+          label: 'Email*',
+          type: 'email',
+          value: formData.email,
+          placeholder: 'example@mail.ru',
+        },
+        {
+          id: 'phone',
+          label: 'Телефон*',
+          type: 'tel',
+          value: formData.phone,
+          placeholder: '89874569034',
+        },
+        {
+          id: 'teamName',
+          label: 'Название команды*',
+          type: 'text',
+          value: formData.teamName,
+          placeholder: 'Умные утята',
+        },
       ].map((field) => (
-        <div key={field.id} className='px-1'>
+        <div key={field.id} className="px-1">
           <label htmlFor={field.id} className="block text-sm font-medium text-gray-700 mb-1">
             {field.label}
           </label>
@@ -70,11 +94,10 @@ export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFo
             required
             className="input"
           />
-
         </div>
       ))}
 
-      <div className='px-1'>
+      <div className="px-1">
         <label
           htmlFor="teamParticipantsNumber"
           className="block text-sm font-medium text-gray-700 mb-1"
@@ -85,7 +108,7 @@ export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFo
           id="teamParticipantsNumber"
           type="number"
           value={formData.teamParticipantsNumber || ''}
-          placeholder='от 2 до 10'
+          placeholder="от 2 до 10"
           onChange={(e) =>
             setFormData({
               ...formData,

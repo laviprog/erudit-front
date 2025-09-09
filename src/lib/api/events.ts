@@ -20,7 +20,8 @@ interface EventPayload {
 }
 
 function transformEvent(event: EventPayload): Event {
-  const { registration_start, registration_end, datetime_event, max_teams, image_url, ...rest } = event;
+  const { registration_start, registration_end, datetime_event, max_teams, image_url, ...rest } =
+    event;
   return {
     registrationStart: registration_start,
     registrationEnd: registration_end,

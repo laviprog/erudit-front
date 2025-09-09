@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
-import { ApplicationFormData, Event} from '@/types/Event';
+import { ApplicationFormData, Event } from '@/types/Event';
 import EventForm from '@/components/form/EventForm';
 import { AnimatePresence, motion } from 'framer-motion';
 import { toast } from 'react-toastify';
@@ -62,20 +62,19 @@ export default function Modal({
           teamName: formData.teamName,
           teamParticipantsNumber: formData.teamParticipantsNumber,
           eventId: formData.event.id,
-        }
+        };
         const response = await fetch('/api/applications', {
           method: 'POST',
           body: JSON.stringify(data),
           headers: { 'Content-Type': 'application/json' },
-        })
+        });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        toast.success('Заявка успешно отправлена!')
-      }
-      catch (error) {
+        toast.success('Заявка успешно отправлена!');
+      } catch (error) {
         console.error('Error submitting form:', error);
-        toast.error('Ошибка при отправке заявки. Попробуйте еще раз.')
+        toast.error('Ошибка при отправке заявки. Попробуйте еще раз.');
       }
     }
   };
