@@ -5,10 +5,16 @@
   --black: #000000;
   --dark: #2f2f2f;
   --gray-dark: #484848;
+  --gray: #696969;
   --gray-light: #bbbbbb;
   --gray-text: #dedede;
-  --violet: #a119ff;
+  --violet-light: #a119ff;
+  --violet: #8b18dc;
   --violet-dark: #6a00b3;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -17,21 +23,45 @@ body {
 }
 
 .h1 {
-  @apply font-black lg:text-6xl text-center md:text-5xl text-4xl;
+  @apply font-black lg:text-6xl text-center md:text-5xl sm:text-4xl text-3xl;
+}
+
+.container-80 {
+  @apply w-[80%] max-w-288 max-sm:w-[90%];
 }
 
 .p {
-  @apply font-[500] lg:text-2xl text-xl text-center text-white/85;
+  @apply font-[500] lg:text-2xl text-xl text-center;
 }
 
 .btn {
-  @apply px-6 py-3 rounded-2xl font-semibold text-lg transition duration-250;
+  @apply sm:px-6 py-3 px-5 sm:rounded-2xl rounded-xl font-semibold text-lg transition duration-250 border-2;
 }
 
 .btn-primary {
-  @apply bg-white/90 text-black hover:bg-white;
+  @apply bg-white/90 text-black border-transparent hover:bg-white active:bg-white;
 }
 
 .btn-secondary {
-  @apply bg-transparent border-2 border-white/90 text-white hover:bg-white hover:text-black;
+  @apply bg-transparent border-white/90 text-white hover:bg-white hover:text-black active:bg-white active:text-black;
+}
+
+.badge {
+  @apply bg-neutral-200 text-[var(--dark)] text-sm px-3 py-1 rounded-xl font-[500];
+}
+
+.btn-card {
+  @apply text-white py-2 px-4 w-full max-sm:text-sm rounded-xl;
+}
+
+.btn-close {
+  @apply bg-[var(--gray)] cursor-not-allowed;
+}
+
+.btn-open {
+  @apply bg-[var(--violet-light)] hover:bg-[var(--violet)] transition duration-200 cursor-pointer;
+}
+
+.input {
+  @apply w-full rounded-lg border-none ring ring-gray-300 px-4 py-2.5 text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--violet-light)] transition
 }

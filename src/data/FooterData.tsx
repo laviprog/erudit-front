@@ -1,9 +1,5 @@
 export const links = [
   {
-    title: 'Игры',
-    href: '#',
-  },
-  {
     title: 'Расписание',
     href: '#',
   },

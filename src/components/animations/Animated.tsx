@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ReactNode, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,6 +19,7 @@ interface AnimatedContentProps {
   threshold?: number;
   delay?: number;
   onComplete?: () => void;
+  className?: string;
 }
 
 const Animated: React.FC<AnimatedContentProps> = ({
@@ -32,6 +35,7 @@ const Animated: React.FC<AnimatedContentProps> = ({
   threshold = 0.1,
   delay = 0,
   onComplete,
+  className,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -83,7 +87,11 @@ const Animated: React.FC<AnimatedContentProps> = ({
     onComplete,
   ]);
 
-  return <div ref={ref}>{children}</div>;
+  return (
+    <div ref={ref} className={className}>
+      {children}
+    </div>
+  );
 };
 
 export default Animated;

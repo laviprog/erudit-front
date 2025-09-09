@@ -1,15 +1,19 @@
 export const navItems = [
+  // {
+  //   href: '/games',
+  //   name: 'Игры',
+  // },
   {
-    href: '/games',
-    name: 'Игры',
-  },
-  {
-    href: '/schedule',
+    href: '/#schedule',
     name: 'Расписание',
   },
   // {
   //   href: '/#',
   //   name: 'Заказать игру',
+  // },
+  // {
+  //   href: "/cooperation",
+  //   name: 'Сотрудничество',
   // },
   {
     href: '/contacts',
@@ -19,4 +23,4 @@ export const navItems = [
     href: '/about',
     name: 'О нас',
   },
-]
+];
