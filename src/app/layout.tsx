@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased`}>
         <ToastContainer
           position="bottom-right"
-          autoClose={2000}
+          autoClose={2500}
           limit={3}
           hideProgressBar={false}
           newestOnTop={false}

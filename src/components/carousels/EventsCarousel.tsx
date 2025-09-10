@@ -81,7 +81,7 @@ export default function EventsCarousel({ events }: { events: Event[] }) {
           spaceBetween={10}
           breakpoints={{
             0: { slidesPerView: 1 },
-            1100: { slidesPerView: 2 },
+            850: { slidesPerView: 2 },
           }}
           centerInsufficientSlides={true}
           className="w-full"

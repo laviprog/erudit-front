@@ -23,15 +23,15 @@ export default function FAQ() {
         <div className="flex flex-col sm:gap-10 gap-5 lg:flex-row md:gap-16">
           <div className="lg:w-1/3">
             <div className="sticky top-40">
-              <Animated duration={1.5} distance={100} delay={0.1}>
+              <Animated duration={1.5} distance={50} delay={0.1}>
                 <h2 className="text-3xl font-bold">Часто задаваемые вопросы</h2>
-                <p className="sm:mt-4 mt-2 font-medium sm:text-lg text-white/90">
+                <p className="sm:mt-4 mt-2 font-medium text-lg text-white/90">
                   Не нашли ответ на свой вопрос?
                 </p>
 
                 <Link
                   href="/contacts"
-                  className="inline-flex gap-0.5 items-center font-bold group sm:text-lg text-white/85 transition-colors duration-200 hover:text-white active:text-white"
+                  className="inline-flex gap-0.5 items-center font-bold group text-lg text-white/85 transition-colors duration-200 hover:text-white active:text-white"
                 >
                   Свяжитесь с нами
                   <ChevronRight className="size-4 stroke-4 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1 sm:translate-y-[1.5px] translate-y-[1px]" />
@@ -40,7 +40,7 @@ export default function FAQ() {
             </div>
           </div>
           <div className="lg:w-2/3">
-            <Animated duration={1.5} distance={100} delay={0.1}>
+            <Animated duration={1.5} distance={50} delay={0.1}>
               <Accordion items={faqItems} openItem={openItem} onToggle={handleToggle} />
             </Animated>
           </div>
