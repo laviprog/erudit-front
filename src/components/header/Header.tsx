@@ -76,7 +76,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" onClick={() => setIsOpen(false)} replace>
             <Image
-              src="/logo-full.webp"
+              src="/images/logo-full.webp"
               alt="Эрудит пати лого"
               width={500}
               height={500}

@@ -65,7 +65,7 @@ export default function ContactForm() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      toast.success('Заявка успешно отправлена!');
+      toast.success('Заявка успешно отправлена! Мы скоро с вами свяжемся.');
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('Ошибка при отправке. Попробуйте еще раз.');

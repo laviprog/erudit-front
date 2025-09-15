@@ -33,7 +33,7 @@ export default function HeroBackground({ images, interval = 5000 }: HeroBackgrou
         />
       ))}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--violet)]"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent to-[var(--violet)]/90"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent max-sm:via-[var(--violet)]/65 to-[var(--violet)]/90"></div>
     </div>
   );
 }

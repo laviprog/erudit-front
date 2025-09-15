@@ -18,7 +18,7 @@ export default async function Schedule() {
     >
       <div className="container-80 flex flex-col gap-10">
         <Animated duration={1.5} distance={100} delay={0.1}>
-          <h2 className="md:text-6xl sm:text-5xl text-4xl font-bold text-center">Ближайшие игры</h2>
+          <h2 className="h2">Ближайшие игры</h2>
         </Animated>
 
         <Animated duration={1.5} distance={200} delay={0.1}>

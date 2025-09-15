@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-6">
         <Link href="/" aria-label="go home" className="mx-auto block size-fit">
           <Image
-            src="/logo-full.webp"
+            src="/images/logo-full.webp"
             alt="Эрудит пати лого"
             width={700}
             height={700}

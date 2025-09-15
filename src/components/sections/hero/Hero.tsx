@@ -41,7 +41,7 @@ export default function Hero() {
       </div>
 
       <Fade delay={600}>
-       <ScrollVelocity texts={['Эрудит ✦ Party ✦ Квиз ✦']} velocity={100} />
+       <ScrollVelocity texts={['Драйв ✦ Смех ✦ Эмоции ✦ Друзья ✦ Радость ✦']} velocity={100} />
       </Fade>
     </section>
   );

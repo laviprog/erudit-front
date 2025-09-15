@@ -1,40 +1,40 @@
 export const links = [
   {
     title: 'Расписание',
-    href: '#',
+    href: '/#schedule',
   },
   {
     title: 'Сотрудничество',
-    href: '#',
+    href: '/#contact-form',
   },
   {
     title: 'Заказать игру',
-    href: '#',
+    href: '/#contact-form',
   },
   {
     title: 'Контакты',
-    href: '#',
+    href: '/contacts',
   },
   {
     title: 'О нас',
-    href: '#',
+    href: '/about',
   },
 ];
 
 export const socialMedia = [
   {
     label: 'VK',
-    href: '/#',
-    icon: '/socials/vk.png',
+    href: 'https://vk.com/clubmozgikam',
+    icon: '/images/socials/vk.png',
   },
   {
     label: 'Telegram',
-    href: '/#',
-    icon: '/socials/tg.png',
+    href: 'https://t.me/eruditparty',
+    icon: '/images/socials/tg.png',
   },
   {
     label: 'WhatsApp',
-    href: '/#',
-    icon: '/socials/whatsapp.png',
+    href: 'https://wa.me/79275014476',
+    icon: '/images/socials/whatsapp.png',
   },
 ];

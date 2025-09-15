@@ -58,7 +58,11 @@ body {
 }
 
 .h1 {
-  @apply font-black lg:text-6xl text-center md:text-5xl sm:text-4xl text-3xl;
+  @apply font-black lg:text-6xl text-center md:text-5xl text-4xl;
+}
+
+.h2 {
+  @apply md:text-6xl sm:text-5xl text-4xl font-bold text-center
 }
 
 .container-80 {
@@ -105,6 +109,10 @@ body {
 /*  background: rgba(161, 25, 250, 0.6);*/
 /*  color: white;*/
 /*}*/
+
+@theme {
+  --breakpoint-xs: 30rem;
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
