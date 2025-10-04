@@ -15,7 +15,8 @@ export default function Hero() {
         <div className="container-80 max-w-4xl flex flex-col gap-10 max-sm:pt-10 items-center">
           <div className="max-w-4xl flex flex-col items-center sm:gap-5 gap-3">
             <Fade>
-              <h1 className="h1">Эрудит Пати – интеллектуальные игры в Камышине!</h1>
+              <h1 className="h1 max-xs:hidden">Эрудит Пати – интеллектуальные игры в Камышине!</h1>
+              <h1 className="h1 xs:hidden">Эрудит Пати – лучшие квизы в Камышине!</h1>
             </Fade>
             <Fade delay={200}>
               <p className="p text-white/85">
@@ -28,12 +29,16 @@ export default function Hero() {
           <div className="flex max-sm:flex-col sm:gap-5 gap-3 items-center max-sm:items-stretch">
             <Fade delay={300}>
               <Link href="/#schedule">
-                <button className="btn btn-primary cursor-pointer w-full">Записаться на игру</button>
+                <button className="btn btn-primary cursor-pointer w-full">
+                  Записаться на игру
+                </button>
               </Link>
             </Fade>
             <Fade delay={400}>
               <Link href="/#contact-form">
-                <button className="btn btn-secondary cursor-pointer w-full">Связаться с нами</button>
+                <button className="btn btn-secondary cursor-pointer w-full">
+                  Связаться с нами
+                </button>
               </Link>
             </Fade>
           </div>
@@ -41,7 +46,7 @@ export default function Hero() {
       </div>
 
       <Fade delay={600}>
-       <ScrollVelocity texts={['Драйв ✦ Смех ✦ Эмоции ✦ Друзья ✦ Радость ✦']} velocity={100} />
+        <ScrollVelocity texts={['Драйв ✦ Смех ✦ Эмоции ✦ Друзья ✦ Радость ✦']} velocity={100} />
       </Fade>
     </section>
   );

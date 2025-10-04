@@ -131,7 +131,8 @@ export default function EventCard({ event, className, onClick }: Props) {
 
         {/* Кнопка регистрации */}
         <div className="mt-3 lg:flex-row flex flex-col gap-2">
-          <div className="lg:w-2/3">
+          {/*<div className="lg:w-2/3">*/}
+          <div className="lg:w-full">
             {status === 'before' && (
               <button disabled className="btn-card btn-close">
                 Откроется через: {formatTimeLeft(timeLeft)}
@@ -149,16 +150,16 @@ export default function EventCard({ event, className, onClick }: Props) {
               </button>
             )}
           </div>
-          <div className="lg:w-1/3 flex items-center justify-center">
-            <Link
-              // href={`/events/${event.id}}`}
-              href="/"
-              className="inline-flex gap-0.5 items-center font-bold group sm:text-lg text-[var(--violet-light)] transition-colors duration-200 hover:text-[var(--violet)] active:text-[var(--violet)]"
-            >
-              Подробнее
-              <ChevronRight className="size-4 stroke-4 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1 sm:translate-y-[1.5px] translate-y-[1px]" />
-            </Link>
-          </div>
+          {/*<div className="lg:w-1/3 flex items-center justify-center">*/}
+          {/*  <Link*/}
+          {/*    // href={`/events/${event.id}}`}*/}
+          {/*    href="/"*/}
+          {/*    className="inline-flex gap-0.5 items-center font-bold group sm:text-lg text-[var(--violet-light)] transition-colors duration-200 hover:text-[var(--violet)] active:text-[var(--violet)]"*/}
+          {/*  >*/}
+          {/*    Подробнее*/}
+          {/*    <ChevronRight className="size-4 stroke-4 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1 sm:translate-y-[1.5px] translate-y-[1px]" />*/}
+          {/*  </Link>*/}
+          {/*</div>*/}
         </div>
       </div>
     </div>

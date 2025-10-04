@@ -36,7 +36,7 @@ export default function ContactForm() {
       message: '',
       type: null,
     });
-  }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,37 +69,16 @@ export default function ContactForm() {
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('Ошибка при отправке. Попробуйте еще раз.');
-    }
-    finally {
+    } finally {
       setStatus('idle');
       clearForm();
     }
   };
-  //
-  // if (status === 'success') {
-  //   return (
-  //     <div className="flex items-center justify-center text-center text-black">
-  //       <div className="w-[80%] flex flex-row-reverse gap-3 items-center">
-  //         <Image
-  //           src="/brain-strong.webp"
-  //           alt="Эрудит пати сильный мозг"
-  //           width={400}
-  //           height={400}
-  //           className="pointer-events-none select-none w-1/2"
-  //           priority
-  //         />
-  //         <p className="mb:text-2xl text-xl w-1/2">
-  //           Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
-  //         </p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white border my-auto max-sm:mx-2 border-neutral-200 shadow-xl space-y-3 p-6 rounded-3xl max-w-xl w-full text-[var(--dark)]"
+      className="bg-white border h-fit border-neutral-200 shadow-xl space-y-3 p-6 rounded-3xl md:w-xl sm:w-lg w-full text-[var(--dark)]"
     >
       <h2 className="text-3xl font-bold text-center">Связаться с нами</h2>
 
@@ -163,10 +142,10 @@ export default function ContactForm() {
             <SelectValue placeholder="Выберите вариант" />
           </SelectTrigger>
           <SelectContent>
-              <SelectItem value="consultation">Получить консультацию</SelectItem>
-              <SelectItem value="event_game_order">Заказать игру для мероприятия</SelectItem>
-              <SelectItem value="partnership">Стать партнёром</SelectItem>
-              <SelectItem value="other">Другое</SelectItem>
+            <SelectItem value="consultation">Получить консультацию</SelectItem>
+            <SelectItem value="event_game_order">Заказать игру для мероприятия</SelectItem>
+            <SelectItem value="partnership">Стать партнёром</SelectItem>
+            <SelectItem value="other">Другое</SelectItem>
           </SelectContent>
         </Select>
       </div>

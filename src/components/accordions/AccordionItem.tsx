@@ -24,7 +24,7 @@ export default function AccordionItem({ item, isOpen, onToggle }: AccordionItemP
   }, [isOpen]);
 
   return (
-    <div className="rounded-xl bg-white/97 text-[var(--violet-light)] sm:px-4 px-3 ">
+    <div className="rounded-xl bg-white/97 text-[var(--violet)] sm:px-4 px-3 ">
       <button
         onClick={() => onToggle(item.id)}
         className="cursor-pointer flex w-full items-center justify-between py-5"
@@ -42,7 +42,10 @@ export default function AccordionItem({ item, isOpen, onToggle }: AccordionItemP
         </div>
       </button>
 
-      <div style={{ height }} className="text-black font-medium overflow-hidden transition-all duration-500 ease-in-out">
+      <div
+        style={{ height }}
+        className="text-black font-medium overflow-hidden transition-all duration-500 ease-in-out"
+      >
         <div ref={contentRef} className="pb-5">
           <p className="max-sm:text-base">{item.answer}</p>
         </div>

@@ -6,6 +6,7 @@ import Accordion from '@/components/accordions/Accordion';
 import { faqItems } from '@/data/FAQ';
 import { ChevronRight } from 'lucide-react';
 import Animated from '@/components/animations/Animated';
+import Fade from '@/components/animations/Fade';
 
 export default function FAQ() {
   const [openItem, setOpenItem] = useState<string | null>(null);
@@ -23,7 +24,7 @@ export default function FAQ() {
         <div className="flex flex-col sm:gap-10 gap-5 lg:flex-row md:gap-16">
           <div className="lg:w-1/3">
             <div className="sticky top-40">
-              <Animated duration={1.5} distance={50} delay={0.1}>
+              <Fade delay={200}>
                 <h2 className="text-3xl font-bold">Часто задаваемые вопросы</h2>
                 <p className="sm:mt-4 mt-2 font-medium text-lg text-white/90">
                   Не нашли ответ на свой вопрос?
@@ -36,13 +37,13 @@ export default function FAQ() {
                   Свяжитесь с нами
                   <ChevronRight className="size-4 stroke-4 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1 sm:translate-y-[1.5px] translate-y-[1px]" />
                 </Link>
-              </Animated>
+              </Fade>
             </div>
           </div>
           <div className="lg:w-2/3">
-            <Animated duration={1.5} distance={50} delay={0.1}>
+            <Fade delay={200}>
               <Accordion items={faqItems} openItem={openItem} onToggle={handleToggle} />
-            </Animated>
+            </Fade>
           </div>
         </div>
       </div>
