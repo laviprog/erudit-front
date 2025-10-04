@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Accordion from '@/components/accordions/Accordion';
 import { faqItems } from '@/data/FAQ';
 import { ChevronRight } from 'lucide-react';
-import Animated from '@/components/animations/Animated';
 import Fade from '@/components/animations/Fade';
 
 export default function FAQ() {
