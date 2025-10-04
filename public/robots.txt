@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://erudit-party.ru
+
+# Sitemaps
+Sitemap: https://erudit-party.ru/sitemap.xml
