@@ -3,8 +3,8 @@
 import { Event } from '@/types/Event';
 import { useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
-import { ChevronRight } from 'lucide-react';
-import Link from 'next/link';
+// import { ChevronRight } from 'lucide-react';
+// import Link from 'next/link';
 import Image from 'next/image';
 
 interface Props {
