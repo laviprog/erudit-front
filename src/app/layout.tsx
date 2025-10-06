@@ -3,9 +3,10 @@ import { Inter } from 'next/font/google';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import { Slide, ToastContainer } from 'react-toastify';
-
 import { Metadata } from 'next';
 import YandexMetrika from '@/components/yandex-metrika';
+import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
+import CookieBanner from '@/components/cookie-banner';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -35,11 +36,11 @@ export const metadata: Metadata = {
     title: 'ЭрудитПати - Интеллектуальные игры в Камышине',
     description:
       'Квизы и викторины для взрослых, семейные игры, корпоративные мероприятия. Проверьте свою эрудицию!',
-    url: 'https://erudit-party.ru',
+    url: 'https://www.erudit-party.ru',
     siteName: 'ЭрудитПати',
     images: [
       {
-        url: 'https://erudit-party.ru/images/preview.webp',
+        url: 'https://www.erudit-party.ru/images/preview.webp',
         width: 1200,
         height: 630,
         alt: 'ЭрудитПати - Интеллектуально-развлекательные игры в Камышине',
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://erudit-party.ru',
+    canonical: 'https://www.erudit-party.ru',
   },
   robots: {
     index: true,
@@ -67,29 +68,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={`${inter.variable} antialiased`}>
-        <YandexMetrika />
+        <CookieConsentProvider>
+          <YandexMetrika />
 
-        <ToastContainer
-          position="bottom-right"
-          autoClose={2500}
-          limit={3}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick={false}
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-          transition={Slide}
-        />
+          <ToastContainer
+            position="bottom-right"
+            autoClose={2500}
+            limit={3}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Slide}
+          />
 
-        <Header />
-        {children}
-        <div id="modal-root"></div>
-        <Footer />
+          <Header />
+          {children}
+          <div id="modal-root"></div>
+          <Footer />
+
+          <CookieBanner />
+        </CookieConsentProvider>
       </body>
     </html>
   );

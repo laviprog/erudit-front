@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://erudit-party.ru',
+  siteUrl: 'https://www.erudit-party.ru',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   changefreq: 'weekly',
@@ -15,7 +15,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://erudit-party.ru/sitemap.xml',
+      'https://www.erudit-party.ru/sitemap.xml',
     ],
   },
 }

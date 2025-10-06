@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'О нас - ЭрудитПати',
     description: 'Узнайте больше об организаторах интеллектуальных игр в Камышине',
-    url: 'https://erudit-party.ru/about',
+    url: 'https://www.erudit-party.ru/about',
   },
   alternates: {
-    canonical: 'https://erudit-party.ru/about',
+    canonical: 'https://www.erudit-party.ru/about',
   },
 };
 

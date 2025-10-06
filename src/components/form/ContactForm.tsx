@@ -10,9 +10,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import clsx from 'clsx';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading'>('idle');
+  const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
   const [formData, setFormData] = useState<RequestObj>({
     name: '',
     email: '',
@@ -36,10 +38,17 @@ export default function ContactForm() {
       message: '',
       type: null,
     });
+    setAgreedToPrivacy(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!agreedToPrivacy) {
+      toast.error('Необходимо согласие на обработку персональных данных');
+      return;
+    }
+
     setStatus('loading');
 
     try {
@@ -165,13 +174,43 @@ export default function ContactForm() {
         ></textarea>
       </div>
 
+      <div className="flex items-start gap-2 pt-2">
+        <input
+          type="checkbox"
+          id="privacy-consent"
+          checked={agreedToPrivacy}
+          onChange={(e) => setAgreedToPrivacy(e.target.checked)}
+          className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+          required
+        />
+        <label htmlFor="privacy-consent" className="text-sm text-gray-700 leading-tight">
+          Я согласен с{' '}
+          <a
+            href="/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            политикой конфиденциальности
+          </a>{' '}
+          и даю согласие на обработку моих персональных данных*
+        </label>
+      </div>
+
       <button
         type="submit"
-        disabled={status === 'loading'}
-        className="max-sm:text-lg btn-card btn-open text-lg font-medium text-white"
+        disabled={status === 'loading' || !agreedToPrivacy}
+        className={clsx("max-sm:text-lg btn-card btn-open text-lg font-medium text-white disabled:!opacity-50 disabled:!cursor-not-allowed")}
       >
         {status === 'loading' ? 'Отправка...' : 'Отправить'}
       </button>
+
+      <p className="text-xs text-gray-500 text-center">
+        Нажимая кнопку &quot;Отправить&quot;, вы соглашаетесь с{' '}
+        <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+          пользовательским соглашением
+        </a>
+      </p>
     </form>
   );
 }

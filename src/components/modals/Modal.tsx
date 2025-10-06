@@ -110,7 +110,7 @@ export default function Modal({
               </button>
             </div>
 
-            <div className="max-h-[70vh] overflow-y-auto pr-2">
+            <div className="overflow-y-auto pr-2">
               <EventForm
                 selectedEvent={selectedEvent}
                 onSubmit={handleFormSubmit}

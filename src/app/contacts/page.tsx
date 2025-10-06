@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     title: 'Контакты ЭрудитПати',
     description:
       'Запишитесь на интеллектуальные игры в Камышине. Контакты для записи и консультаций',
-    url: 'https://erudit-party.ru/contacts',
+    url: 'https://www.erudit-party.ru/contacts',
   },
   alternates: {
-    canonical: 'https://erudit-party.ru/contacts',
+    canonical: 'https://www.erudit-party.ru/contacts',
   },
 };
 

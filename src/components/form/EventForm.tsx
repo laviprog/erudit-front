@@ -10,6 +10,7 @@ interface EventFormProps {
 }
 
 export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFormProps) {
+  const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -34,10 +35,17 @@ export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFo
       teamParticipantsNumber: 0,
       event: null,
     });
+    setAgreedToPrivacy(false);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!agreedToPrivacy) {
+      alert('Необходимо дать согласие на обработку персональных данных');
+      return;
+    }
+    
     if (formData.event) {
       onSubmit(formData);
     }
@@ -122,7 +130,41 @@ export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFo
         />
       </div>
 
-      <div className="flex justify-end sm:gap-3 gap-2 font-[500]">
+      <div className="px-1 pt-2">
+        <div className="flex items-start gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
+          <input
+            type="checkbox"
+            id="event-privacy-consent"
+            checked={agreedToPrivacy}
+            onChange={(e) => setAgreedToPrivacy(e.target.checked)}
+            className="mt-0.5 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 flex-shrink-0"
+            required
+          />
+          <label htmlFor="event-privacy-consent" className="text-xs text-gray-700 leading-tight">
+            Я согласен с{' '}
+            <a
+              href="/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline font-medium"
+            >
+              политикой конфиденциальности
+            </a>{' '}
+            и даю согласие на обработку моих персональных данных, а также подтверждаю 
+            ознакомление с{' '}
+            <a
+              href="/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline font-medium"
+            >
+              пользовательским соглашением
+            </a>*
+          </label>
+        </div>
+      </div>
+
+      <div className="flex justify-end sm:gap-3 gap-2 font-[500] pt-2">
         <button
           type="button"
           onClick={handleCancel}
@@ -132,7 +174,8 @@ export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFo
         </button>
         <button
           type="submit"
-          className="sm:px-5 sm:py-3 max-sm:p-3 bg-[var(--violet-light)] text-white rounded-xl hover:bg-[var(--violet)] transition-colors duration-200 cursor-pointer"
+          disabled={!agreedToPrivacy}
+          className="sm:px-5 sm:py-3 max-sm:p-3 bg-[var(--violet-light)] text-white rounded-xl hover:bg-[var(--violet)] disabled:hover:bg-[var(--violet-light)] transition-colors duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Отправить заявку
         </button>
