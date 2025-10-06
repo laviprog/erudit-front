@@ -9,7 +9,7 @@ export const photos: Photo[] = [
   },
   {
     url: '/images/gallery/preview-2.webp',
-    title: 'Эрудит Пати: Marvel',
+    title: 'ЭрудитПати: Marvel',
     date: '7 июня 2025',
     urlAlbum: 'https://vk.com/album-162826700_307511635',
   },

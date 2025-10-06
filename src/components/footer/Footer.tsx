@@ -9,7 +9,7 @@ export default function Footer() {
         <Link href="/" aria-label="go home" className="mx-auto block size-fit">
           <Image
             src="/images/logo-full.webp"
-            alt="Эрудит пати лого"
+            alt="ЭрудитПати лого"
             width={700}
             height={700}
             className="pointer-events-none select-none lg:w-80 w-60"
@@ -88,7 +88,7 @@ export default function Footer() {
         </div>
 
         <span className="text-white/65 block text-center text-sm border-t py-3 border-white/40">
-          © {new Date().getFullYear()} Эрудит Пати, All rights reserved
+          © {new Date().getFullYear()} ЭрудитПати, All rights reserved
         </span>
       </div>
     </footer>

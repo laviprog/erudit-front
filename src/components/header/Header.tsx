@@ -77,7 +77,7 @@ export default function Header() {
           <Link href="/" onClick={() => setIsOpen(false)} replace>
             <Image
               src="/images/logo-full.webp"
-              alt="Эрудит пати лого"
+              alt="ЭрудитПати лого"
               width={500}
               height={500}
               className="pointer-events-none select-none lg:w-60 md:w-50 w-45"

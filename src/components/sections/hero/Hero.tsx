@@ -15,8 +15,8 @@ export default function Hero() {
         <div className="container-80 max-w-4xl flex flex-col gap-10 max-sm:pt-10 items-center">
           <div className="max-w-4xl flex flex-col items-center sm:gap-5 gap-3">
             <Fade>
-              <h1 className="h1 max-xs:hidden">Эрудит Пати – интеллектуальные игры в Камышине!</h1>
-              <h1 className="h1 xs:hidden">Эрудит Пати – лучшие квизы в Камышине!</h1>
+              <h1 className="h1 max-xs:hidden">ЭрудитПати – интеллектуальные игры в Камышине!</h1>
+              <h1 className="h1 xs:hidden">ЭрудитПати – лучшие квизы в Камышине!</h1>
             </Fade>
             <Fade delay={200}>
               <p className="p text-white/85">
