@@ -69,6 +69,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <meta name="yandex-verification" content="a9922d725043d583" />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         <CookieConsentProvider>
           <YandexMetrika />
