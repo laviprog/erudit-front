@@ -28,7 +28,7 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-        
+
         <div className="my-6 flex max-sm:flex-col justify-center items-center">
           <div className="flex flex-wrap justify-center gap-5 max-sm:pb-3 sm:px-5">
             {socialMedia.map((link, index) => (
@@ -39,12 +39,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={link.label}
               >
-                <Image
-                  src={link.icon}
-                  alt={link.label}
-                  width={50}
-                  height={50}
-                />
+                <Image src={link.icon} alt={link.label} width={50} height={50} />
               </Link>
             ))}
           </div>
@@ -66,22 +61,13 @@ export default function Footer() {
 
         <div className="pb-2">
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-white/60 text-sm">
-            <Link
-              href="/privacy"
-              className="hover:text-white/90 duration-300"
-            >
+            <Link href="/privacy" className="hover:text-white/90 duration-300">
               Политика конфиденциальности
             </Link>
-            <Link
-              href="/terms"
-              className="hover:text-white/90 duration-300"
-            >
+            <Link href="/terms" className="hover:text-white/90 duration-300">
               Пользовательское соглашение
             </Link>
-            <Link
-              href="/cookies"
-              className="hover:text-white/90 duration-300"
-            >
+            <Link href="/cookies" className="hover:text-white/90 duration-300">
               Политика cookies
             </Link>
           </div>

@@ -40,12 +40,12 @@ export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFo
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!agreedToPrivacy) {
       alert('Необходимо дать согласие на обработку персональных данных');
       return;
     }
-    
+
     if (formData.event) {
       onSubmit(formData);
     }
@@ -150,8 +150,7 @@ export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFo
             >
               политикой конфиденциальности
             </a>{' '}
-            и даю согласие на обработку моих персональных данных, а также подтверждаю 
-            ознакомление с{' '}
+            и даю согласие на обработку моих персональных данных, а также подтверждаю ознакомление с{' '}
             <a
               href="/terms"
               target="_blank"
@@ -159,7 +158,8 @@ export default function EventForm({ onSubmit, selectedEvent, onCancel }: EventFo
               className="text-blue-600 hover:underline font-medium"
             >
               пользовательским соглашением
-            </a>*
+            </a>
+            *
           </label>
         </div>
       </div>

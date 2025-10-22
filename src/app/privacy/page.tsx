@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Политика конфиденциальности | ЭрудитПати',
@@ -19,9 +19,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-gray-50 md:pt-12 pt-10">
-
       <div className="max-w-4xl mx-auto px-4 py-12">
-
         <h1 className="text-4xl font-bold text-gray-900 mb-2">Политика конфиденциальности</h1>
 
         <p className="text-gray-600 mb-8">Дата последнего обновления: 06 октября 2025 г.</p>

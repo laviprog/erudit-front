@@ -3,23 +3,17 @@
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import ym, { YMInitializer } from 'react-yandex-metrika';
-import { useCookieConsent } from '@/contexts/CookieConsentContext';
 
 const YM_COUNTER_ID = 104382748;
 
 const YandexMetrika = () => {
   const pathname = usePathname();
-  const { consentStatus } = useCookieConsent();
 
   useEffect(() => {
-    if (pathname && consentStatus === 'accepted') {
+    if (pathname) {
       ym('hit', pathname);
     }
-  }, [pathname, consentStatus]);
-
-  if (consentStatus !== 'accepted') {
-    return null;
-  }
+  }, [pathname]);
 
   return (
     <YMInitializer

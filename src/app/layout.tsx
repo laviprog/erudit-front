@@ -5,7 +5,7 @@ import Footer from '@/components/footer/Footer';
 import { Slide, ToastContainer } from 'react-toastify';
 import { Metadata } from 'next';
 import YandexMetrika from '@/components/yandex-metrika';
-import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
+import { CookieBannerProvider } from '@/context/CookieBannerContext';
 import CookieBanner from '@/components/cookie-banner';
 
 const inter = Inter({
@@ -62,18 +62,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru">
       <head>
         <meta name="yandex-verification" content="873f784055d63554" />
       </head>
       <body className={`${inter.variable} antialiased`}>
-        <CookieConsentProvider>
+        <CookieBannerProvider>
           <YandexMetrika />
 
           <ToastContainer
@@ -97,7 +93,7 @@ export default function RootLayout({
           <Footer />
 
           <CookieBanner />
-        </CookieConsentProvider>
+        </CookieBannerProvider>
       </body>
     </html>
   );

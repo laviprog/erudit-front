@@ -6,7 +6,7 @@ module.exports = {
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
-  exclude: ['/api/*'], // Исключить определенные пути
+  exclude: ['/api/*'],
   robotsTxtOptions: {
     policies: [
       {
@@ -14,8 +14,6 @@ module.exports = {
         allow: '/',
       },
     ],
-    additionalSitemaps: [
-      'https://www.erudit-party.ru/sitemap.xml',
-    ],
+    additionalSitemaps: ['https://www.erudit-party.ru/sitemap.xml'],
   },
-}
+};

@@ -200,14 +200,21 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading' || !agreedToPrivacy}
-        className={clsx("max-sm:text-lg btn-card btn-open text-lg font-medium text-white disabled:!opacity-50 disabled:!cursor-not-allowed")}
+        className={clsx(
+          'max-sm:text-lg btn-card btn-open text-lg font-medium text-white disabled:!opacity-50 disabled:!cursor-not-allowed'
+        )}
       >
         {status === 'loading' ? 'Отправка...' : 'Отправить'}
       </button>
 
       <p className="text-xs text-gray-500 text-center">
         Нажимая кнопку &quot;Отправить&quot;, вы соглашаетесь с{' '}
-        <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+        <a
+          href="/terms"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline"
+        >
           пользовательским соглашением
         </a>
       </p>

@@ -6,7 +6,7 @@ A modern web landing for organizing and promoting intellectual entertainment gam
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - Package manager: pnpm, yarn, or npm
 
 ### Installation
@@ -25,6 +25,7 @@ A modern web landing for organizing and promoting intellectual entertainment gam
     ```bash
     cp .env.example .env.local
     ```
+
    Then fill in the required variables
 
 3. Install dependencies:
@@ -52,4 +53,3 @@ Open http://localhost:3000 to view it in the browser.
 
 This project is provided for **portfolio and demonstration purposes only**.  
 All rights reserved. Unauthorized use or redistribution is prohibited.
-
