@@ -67,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ru">
       <head>
         <meta name="yandex-verification" content="873f784055d63554" />
+        <link rel="icon" href="https://www.erudit-party.ru/favicon.ico" type="image/x-icon" />
       </head>
       <body className={`${inter.variable} antialiased`}>
         <CookieBannerProvider>
