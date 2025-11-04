@@ -1,9 +1,9 @@
 # *
 User-agent: *
 Allow: /
-
-# Host
-Host: https://www.erudit-party.ru
+Disallow: /terms
+Disallow: /privacy
+Disallow: /cookies
 
 # Sitemaps
 Sitemap: https://www.erudit-party.ru/sitemap.xml
