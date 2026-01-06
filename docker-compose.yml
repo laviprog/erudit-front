@@ -1,0 +1,19 @@
+services:
+  erudit-front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: erudit-front
+    image: erudit-front
+    ports:
+      - '127.0.0.1:3000:3000'
+    env_file:
+      - .env.production
+    networks:
+      - erudit-front-network
+    restart: unless-stopped
+
+networks:
+  erudit-front-network:
+    name: erudit-front-network
+    driver: bridge
